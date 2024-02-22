@@ -77,10 +77,6 @@ let onMessage = (data) => {
             // Heartbeat
             //console.info('Ignoring metadata: ', notification);
             return;
-        } else if (data.eventBody.conversationId != currentConversationId) {
-            // Conversation event not related to the current conversationId (in this frame)
-            // Ignore
-            return;
         } else if (data.eventBody.participants.find(p => p.purpose == 'customer').endTime) {
             console.log('ending conversation');
         } else {
